@@ -54,7 +54,7 @@
     }
     tbody.normal td.meta {
     }
-    tbody.normal td.challenger-1 {
+    tbody.normal td.challenger-0 {
       background: rgba(255, 223, 138, 0.6);
     }
     tbody.normal td.challenger-both {
@@ -62,7 +62,7 @@
       text-align: center;
       /*background-image: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255, 160, 148, 0.6) 10px, rgba(255, 160, 148, 0.6) 20px);*/
     }
-    tbody.normal td.challenger-2 {
+    tbody.normal td.challenger-1 {
       background: rgba(255, 160, 148, 0.6);
     }
     tbody.normal td.communication {
@@ -107,15 +107,15 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">b</span> = 0</td>
-  <td class="challenger-2"><span class="set-var">b</span> = 1</td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">k</span> = rand(Keys)</td>
-  <td class="challenger-2"><span class="set-var">R</span> = rand(Functions)</td>
+  <td class="challenger-0"><span class="set-var">k</span> = rand(Keys)</td>
+  <td class="challenger-1"><span class="set-var">R</span> = rand(Functions)</td>
   <td class="communication"></td>
   <td class="adversary"></td>
 </tr>
@@ -129,8 +129,8 @@
   <td class="adversary"><span class="set-var">m</span> &isin; Inputs</td>
 </tr>
 <tr>
-  <td class="challenger-1"><span class="set-var">c</span> = F(k, m)</td>
-  <td class="challenger-2"><span class="set-var">c</span> = R(m)</td>
+  <td class="challenger-0"><span class="set-var">c</span> = F(k, m)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = R(m)</td>
   <td class="communication send-right">&rarr;</td>
   <td class="adversary"><span class="set-var">c</span></td>
 </tr>
@@ -139,8 +139,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
 </tr>
@@ -149,8 +149,8 @@
 <tbody class="done">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
 </tr>
@@ -176,8 +176,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">b</span> = 0</td>
-  <td class="challenger-2"><span class="set-var">b</span> = 1</td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
@@ -197,8 +197,8 @@
   <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
 </tr>
 <tr>
-  <td class="challenger-1"><span class="set-var">c</span> = E(k, m<sub>0</sub>)</td>
-  <td class="challenger-2"><span class="set-var">c</span> = E(k, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">c</span> = E(k, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = E(k, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
   <td class="adversary"><span class="set-var">c</span></td>
 </tr>
@@ -207,8 +207,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
 </tr>
@@ -217,8 +217,8 @@
 <tbody class="done">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
 </tr>
@@ -245,8 +245,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">b</span> = 0</td>
-  <td class="challenger-2"><span class="set-var">b</span> = 1</td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
@@ -281,8 +281,8 @@
 </tr>
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
-  <td class="challenger-2"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
   <td class="adversary"><span class="set-var">c</span></td>
 </tr>
@@ -291,8 +291,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
 </tr>
@@ -301,8 +301,8 @@
 <tbody class="done">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
 </tr>
@@ -329,8 +329,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
-  <td class="challenger-1"><span class="set-var">b</span> = 0</td>
-  <td class="challenger-2"><span class="set-var">b</span> = 1</td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
@@ -364,8 +364,8 @@
   <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
 </tr>
 <tr>
-  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
-  <td class="challenger-2"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
   <td class="adversary"><span class="set-var">c</span></td>
 </tr>
@@ -374,8 +374,8 @@
 <tbody class="normal">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
 </tr>
@@ -384,8 +384,8 @@
 <tbody class="done">
 <tr>
   <td class="meta"></td>
+  <td class="challenger-0"></td>
   <td class="challenger-1"></td>
-  <td class="challenger-2"></td>
   <td class="communication"></td>
   <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
 </tr>
