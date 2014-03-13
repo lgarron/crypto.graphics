@@ -1,6 +1,7 @@
 
 html {
   font-family: Helvetica, Tahoma, sans-serif;
+  background: rgb(255, 244, 222);
 }
 
 #wrapper {
@@ -9,12 +10,8 @@ html {
 
 div.section {
   min-width: 800px;
-  background: rgb(255, 244, 222);
-  border: 1px solid #AAA;
-  margin: 3em 3em;
+  margin: 0em 3em;
   padding: 2em 3em;
-  border-radius: 1em;
-  box-shadow: 0.5em 0.5em 1em #AAA;
 }
 
 h1 {
@@ -29,6 +26,12 @@ h2 {
 
 h3 {
   margin: 0em auto 1em;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: #000;
 }
 
 code {

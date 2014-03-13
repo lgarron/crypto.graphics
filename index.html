@@ -12,11 +12,31 @@
 <h1>crypto.graphics</h1>
 
 <center><code>
+  <a href="#advantage">Advantage</a> &bull;
   <a href="#prf">PRF</a> &bull;
   <a href="#cpa">CPA</a> &bull;
   <a href="#ind-cca1">IND-CCA1</a> &bull;
   <a href="#ind-cca2">IND-CCA2</a>
 </code></center>
+
+<br>
+<hr>
+
+<div class="section" id="advantage">
+
+<h2>Advantage</h2>
+
+A scheme/system <code>S</code> is considered secure if the advantage of any efficient (polynomial-time) adversary against <code>S</code> in the relevant security game is negligible.
+
+<ul>
+  <li><code>W<sub>0</sub> = Pr[b<sub>guess</sub> = 1 | b = 0]</code></li>
+  <li><code>W<sub>1</sub> = Pr[b<sub>guess</sub> = 1 | b = 1]</code></li>
+  <li><code>Advantage[Adversary, S] = |W<sub>0</sub> - W<sub>1</sub>|</code></li>
+</ul>
+
+</div>
+
+<hr>
 
 <div class="section" id="prf">
 <h2>PRF (Pseudo-Random Function Family) Security Game</h2>
@@ -77,15 +97,9 @@
 </tbody>
 </table>
 
-<h3>Advantage</h3>
-
-<ul>
-  <li><code>W<sub>0</sub> = Pr[b<sub>guess</sub> = 1 | b = 0]</code></li>
-  <li><code>W<sub>1</sub> = Pr[b<sub>guess</sub> = 1 | b = 1]</code></li>
-  <li><code>Advantage[Adversary, F] = |W<sub>0</sub> - W<sub>1</sub>|</code></li>
-</ul>
-
 </div>
+
+<hr>
 
 <div class="section" id="cpa">
 <h2>CPA (Chosen-Plaintext Attack) Security Game</h2>
@@ -145,16 +159,9 @@
 </tbody>
 </table>
 
-
-<h3>Advantage</h3>
-
-<ul>
-  <li><code>W<sub>0</sub> = Pr[b<sub>guess</sub> = 1 | b = 0]</code></li>
-  <li><code>W<sub>1</sub> = Pr[b<sub>guess</sub> = 1 | b = 1]</code></li>
-  <li><code>Advantage[Adversary, E] = |W<sub>0</sub> - W<sub>1</sub>|</code></li>
-</ul>
-
 </div>
+
+<hr>
 
 <div class="section" id="ind-cca1">
 <h2>IND-CCA1 Security Game (Indistinguishability under Chosen Ciphertext, Non-Adaptive)</h2>
@@ -229,16 +236,9 @@
 </tbody>
 </table>
 
-
-<h3>Advantage</h3>
-
-<ul>
-  <li><code>W<sub>0</sub> = Pr[b<sub>guess</sub> = 1 | b = 0]</code></li>
-  <li><code>W<sub>1</sub> = Pr[b<sub>guess</sub> = 1 | b = 1]</code></li>
-  <li><code>Advantage[Adversary, E] = |W<sub>0</sub> - W<sub>1</sub>|</code></li>
-</ul>
-
 </div>
+
+<hr>
 
 <div class="section" id="ind-cca2">
 <h2>IND-CCA2 Security Game (Indistinguishability under Chosen Ciphertext, Adaptive)</h2>
@@ -311,15 +311,6 @@
 </tr>
 </tbody>
 </table>
-
-
-<h3>Advantage</h3>
-
-<ul>
-  <li><code>W<sub>0</sub> = Pr[b<sub>guess</sub> = 1 | b = 0]</code></li>
-  <li><code>W<sub>1</sub> = Pr[b<sub>guess</sub> = 1 | b = 1]</code></li>
-  <li><code>Advantage[Adversary, E] = |W<sub>0</sub> - W<sub>1</sub>|</code></li>
-</ul>
 
 </div>
 
