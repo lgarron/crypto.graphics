@@ -131,10 +131,10 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
   <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
 </tr>
 <tr>
-  <td class="challenger-0"><span class="set-var">c</span> = E(k, m<sub>0</sub>)</td>
-  <td class="challenger-1"><span class="set-var">c</span> = E(k, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">ct</span> = E(k, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">ct</span> = E(k, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
-  <td class="adversary"><span class="set-var">c</span></td>
+  <td class="adversary"><span class="set-var">ct</span></td>
 </tr>
 </tbody>
 
@@ -188,14 +188,14 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 <tbody class="normal loop">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
-  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">ct</span></td>
   <td class="communication send-left">&larr;</td>
-  <td class="adversary"><span class="set-var">c</span> &isin; Ciphertexts</td>
+  <td class="adversary"><span class="set-var">ct</span> &isin; Ciphertexts</td>
 </tr>
 <tr>
-  <td class="challenger-both" colspan="2"><span class="set-var">p</span> = D(sk, c)</td>
+  <td class="challenger-both" colspan="2"><span class="set-var">pt</span> = D(sk, c)</td>
   <td class="communication send-right">&rarr;</td>
-  <td class="adversary"><span class="set-var">p</span></td>
+  <td class="adversary"><span class="set-var">pt</span></td>
 </tr>
 </tbody>
 
@@ -208,10 +208,10 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 <tr>
   <td class="meta"></td>
-  <td class="challenger-0"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
-  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">ct</span> = E(sk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">ct</span> = E(sk, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
-  <td class="adversary"><span class="set-var">c</span></td>
+  <td class="adversary"><span class="set-var">ct</span></td>
 </tr>
 </tbody>
 
@@ -265,14 +265,14 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 <tbody class="normal loop">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
-  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">ct</span></td>
   <td class="communication send-left">&larr;</td>
-  <td class="adversary"><span class="set-var">c</span> &isin; Ciphertexts</td>
+  <td class="adversary"><span class="set-var">ct</span> &isin; Ciphertexts</td>
 </tr>
 <tr>
   <td class="challenger-both" colspan="2"><span class="set-var">p</span> = D(sk, c)</td>
   <td class="communication send-right">&rarr;</td>
-  <td class="adversary"><span class="set-var">p</span></td>
+  <td class="adversary"><span class="set-var">pt</span></td>
 </tr>
 </tbody>
 
@@ -284,10 +284,10 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
   <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
 </tr>
 <tr>
-  <td class="challenger-0"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
-  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">ct</span> = E(sk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">ct</span> = E(sk, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
-  <td class="adversary"><span class="set-var">c</span></td>
+  <td class="adversary"><span class="set-var">ct</span></td>
 </tr>
 </tbody>
 
