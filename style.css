@@ -1,7 +1,7 @@
 
 html {
   font-family: Helvetica, Tahoma, sans-serif;
-  background: rgb(255, 250, 238);
+  background: rgb(255, 244, 222);
 }
 
 #wrapper {
@@ -120,4 +120,9 @@ span.set-var {
 
 td .fa {
   font-size: 0.8em;
+}
+
+td.meta .fa-retweet {
+  font-size: 1.75em;
+  color: #444;
 }
