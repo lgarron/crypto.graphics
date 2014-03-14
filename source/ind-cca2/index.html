@@ -1,0 +1,101 @@
+---
+layout: default
+title: IND-CCA2
+---
+
+<div class="section" id="ind-cca2">
+<h2>IND-CCA2 Security Game<br>(Indistinguishability under Chosen Ciphertext Attack, Adaptive)</h2>
+
+<p>
+  <code>{genKeys, E, D}</code> is the candidate public cryptosystem.<br>
+Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decryption queries. This difference is <span style="border: 2px solid #F00; padding: 0 0.2em;">outlined in red</span>.
+</p>
+<br><br>
+
+<table>
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
+  <td class="communication"></td>
+  <td class="adversary">Adversary</td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="The challenger runs genKeys() to initialize the cryptosystem, and sends the public key to the adversary. Note that the adversary can use the public key to computer to compute encryptions on their own.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both" colspan="2"><span class="set-var">sk</span>, <span class="set-var">pk</span> = genKeys()</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">pk</span></td>
+</tr>
+</tbody>
+
+<tbody class="normal loop" title="The adversary may repeatedly submit ciphertexts, and receives the decryption of each.">
+<tr>
+  <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">c</span> &isin; Ciphertexts</td>
+</tr>
+<tr>
+  <td class="challenger-both" colspan="2"><span class="set-var">p</span> = D(sk, c)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">p</span></td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="The adversary submits a pair of messages, and receives the one corresponding to the bit b.">
+
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
+</tr>
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"><span class="set-var">c<sup>*</sup></span> = E(sk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c<sup>*</sup></span> = E(sk, m<sub>1</sub>)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">c<sup>*</sup></span></td>
+</tr>
+</tbody>
+
+<tbody class="normal loop emphasize" title="The adversary may continue to submit ciphertexts as often as they like, and receives the decryption of each.">
+<tr>
+  <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">c</span> &isin; Ciphertexts (c &ne; c<sup>*</sup>)</td>
+</tr>
+<tr>
+  <td class="challenger-both" colspan="2"><span class="set-var">p</span> = D(sk, c)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">p</span></td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
+</tr>
+</tbody>
+
+<tbody class="done" title="The adversary outpus their guess.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
+</tr>
+</tbody>
+</table>
+
+</div>

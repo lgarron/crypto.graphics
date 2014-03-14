@@ -1,27 +1,92 @@
-
-html {
-  font-family: Helvetica, Tahoma, sans-serif;
-  background: rgb(255, 244, 222);
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#wrapper {
-  /*padding: 3em;*/
+html, body {
+  font-family: Helvetica, Tahoma, sans-serif;
+  background: rgb(255, 244, 222);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+#menu-wrapper, #content-wrapper {
+  vertical-align: bottom;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-wrapper {
+  width: 15%;
+  background: #C69760;
+}
+
+#content-wrapper {
+  width: 85%;
+  overflow-y: auto;
+  overflow-x: auto;
+  z-index: -5;
+  -webkit-overflow-scrolling: touch;
+}
+
+#menu {
+  height: 100%;
+  width: 100%;
+  font-size: 150%;
+  line-height: 150%;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-box-shadow: inset -13px 0px 16px -10px rgba(0, 0, 0, 0.45) ;
+}
+
+#menu a {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+.brown-links a {
+  color: black;
+  text-decoration: none;
+}
+.brown-links a:visited {color: #624221;}
+.brown-links a:hover {color: #A37547; background: #000;}
+
+#menu a span {
+  padding: 0em 0.75em;
+}
+
+#content {
+  padding: 1em 3em;
 }
 
 div.section {
-  min-width: 800px;
-  margin: 0em 3em;
-  padding: 2em 3em;
+  margin: 2em 0em;
 }
 
 h1 {
-  margin: 1em auto 1em;
+  margin: 0em auto 1em;
   text-align: center;
   font-family: Courier, monospace;
 }
 
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
 h2 {
   margin: 0em auto 1em;
+  text-align: center;
 }
 
 h3 {
@@ -38,8 +103,32 @@ code {
   font-size: 1.4em;
 }
 
-p {
+.section p {
   line-height: 150%;
+  text-align: center
+}
+
+#home {
+  text-align: center;
+}
+
+#home a {
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 0.5em 0.5em 0.2em;
+}
+
+#home span {
+  display: inline-block;
+  font-size: 2em;
+  padding: 0.2em;
+}
+
+#home img {
+  height: 150px;
+  border-radius: 0.5em;
 }
 
 /* Game Tables */
@@ -48,10 +137,15 @@ table {
   /*background: #FA8;*/
   border-collapse: collapse;
   margin: 0px auto;
-  width: 100%;
   max-width: 1200px;
-  font-size: 150%;
+  font-size: 125%;
   font-family: monospace;
+}
+
+@media (min-width: 1000px) {
+  table {
+    font-size: 150%;
+  }
 }
 
 tbody.loop {
@@ -92,6 +186,7 @@ tbody.normal td.challenger-1 {
 }
 
 tbody.normal td.communication {
+  width: 20%;
 }
 
 tbody.normal td.adversary {

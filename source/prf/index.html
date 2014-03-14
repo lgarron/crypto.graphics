@@ -1,0 +1,71 @@
+---
+layout: default
+title: PRF
+---
+
+<div class="section" id="prf">
+<h2>PRF (Pseudo-Random Function Family) Security Game</h2>
+
+<p>
+  <code>F</code> is the candidate PRF.
+</p>
+<br><br>
+
+<table>
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
+  <td class="communication"></td>
+  <td class="adversary">Adversary</td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="The challenger initializes their function (either by selecting a PRF key or a truly random function).">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"><span class="set-var">k</span> = rand(Keys)</td>
+  <td class="challenger-1"><span class="set-var">R</span> = rand(Functions)</td>
+  <td class="communication"></td>
+  <td class="adversary"></td>
+</tr>
+</tbody>
+
+<tbody class="normal loop" title="The adversary may query the arbitrarily many input values of the function to get the corresponding output values. The function used by the challenger depends on b, and is not directly told to the adversary.">
+<tr>
+  <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m</span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">m</span> &isin; Inputs</td>
+</tr>
+<tr>
+  <td class="challenger-0"><span class="set-var">c</span> = F(k, m)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = R(m)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">c</span></td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
+</tr>
+</tbody>
+
+<tbody class="done" title="The adversary outpus their guess.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
+</tr>
+</tbody>
+</table>
+
+</div>

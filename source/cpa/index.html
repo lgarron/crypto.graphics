@@ -1,0 +1,70 @@
+---
+layout: default
+title: CPA
+---
+
+<div class="section" id="cpa">
+<h2>CPA (Chosen-Plaintext Attack) Security Game</h2>
+
+<p>
+  <code>E</code> is the encryption function of a candidate symmetric cryptosystem <code>{E, D}</code>
+</p>
+<br><br>
+
+<table>
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"><span class="set-var">b</span> = 0</td>
+  <td class="challenger-1"><span class="set-var">b</span> = 1</td>
+  <td class="communication"></td>
+  <td class="adversary">Adversary</td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="The adversary selects a key uniformly at random from the key space.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both" colspan="2"><span class="set-var">k</span> = rand(Keys)</td>
+  <td class="communication"></td>
+  <td class="adversary"></td>
+</tr>
+</tbody>
+
+<tbody class="normal loop" title="The adversary submits pairs of messages, and always receives the one corresponding to the bit b.">
+<tr>
+  <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
+  <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span> &isin; Inputs</td>
+</tr>
+<tr>
+  <td class="challenger-0"><span class="set-var">c</span> = E(k, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = E(k, m<sub>1</sub>)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">c</span></td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary"><span class="set-var">b<sub>guess</sub></span> &isin; {0, 1}</td>
+</tr>
+</tbody>
+
+<tbody class="done" title="The adversary outpus their guess.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-0"></td>
+  <td class="challenger-1"></td>
+  <td class="communication"></td>
+  <td class="adversary send-down">b<sub>guess</sub><br>&darr;</td>
+</tr>
+</tbody>
+</table>
+
+</div>
