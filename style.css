@@ -126,3 +126,7 @@ td.meta .fa-retweet {
   font-size: 1.75em;
   color: #444;
 }
+
+tbody:hover {
+  background: rgba(000, 000, 000, 0.2);
+}

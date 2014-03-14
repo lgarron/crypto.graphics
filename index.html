@@ -46,7 +46,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 <code>F</code> is the candidate PRF.<br><br>
 
 <table>
-<tbody class="normal">
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"><span class="set-var">b</span> = 0</td>
@@ -54,6 +54,9 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
+</tbody>
+
+<tbody class="normal" title="The challenger initializes their function (either by selecting a PRF key or a truly random function).">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"><span class="set-var">k</span> = rand(Keys)</td>
@@ -63,7 +66,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal loop">
+<tbody class="normal loop" title="The adversary may query the arbitrarily many input values of the function to get the corresponding output values. The function used by the challenger depends on b, and is not directly told to the adversary.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m</span></td>
@@ -78,7 +81,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -88,7 +91,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="done">
+<tbody class="done" title="The adversary outpus their guess.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -109,7 +112,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 <code>E</code> is the encryption function of a candidate symmetric cryptosystem <code>{E, D}</code>.<br><br>
 
 <table>
-<tbody class="normal">
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"><span class="set-var">b</span> = 0</td>
@@ -117,6 +120,9 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
+</tbody>
+
+<tbody class="normal" title="The adversary selects a key uniformly at random from the key space.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both" colspan="2"><span class="set-var">k</span> = rand(Keys)</td>
@@ -125,7 +131,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal loop">
+<tbody class="normal loop" title="The adversary submits pairs of messages, and always receives the one corresponding to the bit b.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
@@ -140,7 +146,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -150,7 +156,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="done">
+<tbody class="done" title="The adversary outpus their guess.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -171,7 +177,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 <code>{genKeys, E, D}</code> is the candidate public cryptosystem.<br><br>
 
 <table>
-<tbody class="normal">
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"><span class="set-var">b</span> = 0</td>
@@ -179,6 +185,9 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
+</tbody>
+
+<tbody class="normal" title="The challenger runs genKeys() to initialize the cryptosystem, and sends the public key to the adversary. Note that the adversary can use the public key to computer to compute encryptions on their own.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both" colspan="2"><span class="set-var">sk</span>, <span class="set-var">pk</span> = genKeys()</td>
@@ -187,7 +196,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal loop">
+<tbody class="normal loop" title="The adversary may repeatedly submit ciphertexts, and receives the decryption of each.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
@@ -201,7 +210,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="The adversary submits a pair of messages, and receives the one corresponding to the bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
@@ -217,7 +226,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -227,7 +236,7 @@ A scheme/system <code>S</code> is considered secure if the advantage of any effi
 </tr>
 </tbody>
 
-<tbody class="done">
+<tbody class="done" title="The adversary outpus their guess.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -252,7 +261,7 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 <br><br>
 
 <table>
-<tbody class="normal">
+<tbody class="normal" title="The challenger's sets their binary &quot;world bit&quot; b depending on they are in world 0 or world 1 (also called &quot;experiment 0/1&quot;).">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"><span class="set-var">b</span> = 0</td>
@@ -260,6 +269,9 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
   <td class="communication"></td>
   <td class="adversary">Adversary</td>
 </tr>
+</tbody>
+
+<tbody class="normal" title="The challenger runs genKeys() to initialize the cryptosystem, and sends the public key to the adversary. Note that the adversary can use the public key to computer to compute encryptions on their own.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both" colspan="2"><span class="set-var">sk</span>, <span class="set-var">pk</span> = genKeys()</td>
@@ -268,7 +280,7 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 </tr>
 </tbody>
 
-<tbody class="normal loop">
+<tbody class="normal loop" title="The adversary may repeatedly submit ciphertexts, and receives the decryption of each.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
@@ -282,7 +294,8 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="The adversary submits a pair of messages, and receives the one corresponding to the bit b.">
+
 <tr>
   <td class="meta"></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
@@ -298,7 +311,7 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 </tr>
 </tbody>
 
-<tbody class="normal loop emphasize">
+<tbody class="normal loop emphasize" title="The adversary may continue to submit ciphertexts as often as they like, and receives the decryption of each.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">c</span></td>
@@ -312,7 +325,7 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 </tr>
 </tbody>
 
-<tbody class="normal">
+<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
@@ -322,7 +335,7 @@ Unlike <a href="#ind-cca1">IND-CCA1</a>, the adversary may make additional decry
 </tr>
 </tbody>
 
-<tbody class="done">
+<tbody class="done" title="The adversary outpus their guess.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-0"></td>
