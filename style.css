@@ -38,6 +38,10 @@ code {
   font-size: 1.4em;
 }
 
+p {
+  line-height: 150%;
+}
+
 /* Game Tables */
 
 table {
@@ -52,6 +56,11 @@ table {
 
 tbody.loop {
   border: 3px solid #000;
+}
+
+
+tbody.loop.emphasize {
+  border: 3px solid #F00;
 }
 
 td {
