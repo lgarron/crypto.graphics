@@ -1,6 +1,6 @@
 all: build
 
-JEKYLL_ARGS = --source source --destination build
+JEKYLL_ARGS =
 URL = "https://crypto.graphics/"
 
 .PHONY: build
@@ -17,7 +17,9 @@ deploy:
 		--exclude .DS_Store \
 		--exclude .git \
 		--exclude .gitignore \
-		./build/ \
+		--exclude Makefile \
+		--exclude README.md \
+		./_site/ \
 		crypto.graphics:~/crypto.graphics/
 	echo "\nDone deploying. Go to ${URL}\n"
 
