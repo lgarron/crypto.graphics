@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CPA
+title: Ciphertext Integrity
 ---
 
 <div class="section" id="integrity">
@@ -22,7 +22,7 @@ title: CPA
 </tr>
 </tbody>
 
-<tbody class="normal loop" title="The adversary submits pairs of messages, and always receives the one corresponding to the bit b.">
+<tbody class="normal loop" title="The adversary messages repeatedly, and receives a valid encryption from the adversary each time.">
 <tr>
   <td class="meta" rowspan="2"><i class="fa fa-retweet"></i><br>i++</td>
   <td class="challenger-both receive-from-right"><span class="set-var">m<sub>i</sub></span></td>
@@ -36,7 +36,7 @@ title: CPA
 </tr>
 </tbody>
 
-<tbody class="normal" title="Given all the available information, the adversary selects a guess for the world bit b.">
+<tbody class="normal" title="Given all the available information, the adversary attempts to procude a forged ciphertext that does not match any of the encryptions given by the challenger.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both"></td>
@@ -45,7 +45,7 @@ title: CPA
 </tr>
 </tbody>
 
-<tbody class="done" title="The adversary outpus their guess.">
+<tbody class="done" title="The adversary outputs their attempted forgery.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both"></td>
