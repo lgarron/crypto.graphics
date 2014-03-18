@@ -169,6 +169,7 @@ td:not(:empty):not(.meta):not(.communication) {
 }
 
 tbody.normal td.meta {
+  text-align: center;
 }
 
 tbody.normal td.challenger-0 {
