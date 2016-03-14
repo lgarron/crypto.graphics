@@ -45,7 +45,7 @@ title: IND-CCA1
 </tr>
 </tbody>
 
-<tbody class="normal" title="The adversary submits a pair of messages, and receives the one corresponding to the bit b.">
+<tbody class="normal" title="The adversary submits a pair of messages, and receives an encryption of the one corresponding to the bit b.">
 <tr>
   <td class="meta"></td>
   <td class="challenger-both receive-from-right" colspan="2"><span class="set-var">m<sub>0</sub></span>, <span class="set-var">m<sub>1</sub></span></td>
@@ -54,8 +54,8 @@ title: IND-CCA1
 </tr>
 <tr>
   <td class="meta"></td>
-  <td class="challenger-0"><span class="set-var">c</span> = E(sk, m<sub>0</sub>)</td>
-  <td class="challenger-1"><span class="set-var">c</span> = E(sk, m<sub>1</sub>)</td>
+  <td class="challenger-0"><span class="set-var">c</span> = E(pk, m<sub>0</sub>)</td>
+  <td class="challenger-1"><span class="set-var">c</span> = E(pk, m<sub>1</sub>)</td>
   <td class="communication send-right">&rarr;</td>
   <td class="adversary"><span class="set-var">c</span></td>
 </tr>
