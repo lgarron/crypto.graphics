@@ -12,7 +12,7 @@ serve:
 	jekyll serve ${JEKYLL_ARGS} --watch
 
 .PHONY: deploy
-deploy:
+deploy: build
 	rsync -avz \
 		--exclude .DS_Store \
 		--exclude .git \
