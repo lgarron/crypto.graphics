@@ -1,0 +1,71 @@
+---
+layout: default
+title: Message Authentication Code (MAC)
+---
+
+<div class="section" id="integrity">
+<h2>Message Authentication Code (MAC) Security Game</h2>
+
+<p>
+  <code>{Sign, Verify}</code> is the candidate MAC scheme.
+</p>
+<br><br>
+
+<table>
+
+<tbody class="normal" title="The adversary selects a key uniformly at random from the key space.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both"><span class="set-var">k</span> = rand(Keys)</td>
+  <td class="communication"></td>
+  <td class="adversary"></td>
+</tr>
+</tbody>
+
+<tbody class="normal loop" title="The adversary sends messages repeatedly, and receives a valid tag from the challenger each time.">
+<tr>
+  <td class="meta" rowspan="2"><i class="fa fa-retweet"></i><br>i++</td>
+  <td class="challenger-both receive-from-right"><span class="set-var">m<sub>i</sub></span></td>
+  <td class="communication send-left">&larr;</td>
+  <td class="adversary"><span class="set-var">m<sub>i</sub></span> &isin; Inputs</td>
+</tr>
+<tr>
+  <td class="challenger-both"><span class="set-var">t<sub>i</sub></span> = Sign(k, m<sub>i</sub>)</td>
+  <td class="communication send-right">&rarr;</td>
+  <td class="adversary"><span class="set-var">t<sub>i</sub></span></td>
+</tr>
+</tbody>
+
+<tbody class="normal" title="Given all the available information, the adversary attempts to produce a forged combination of message and tag that does not match any of the message-tag pairs from the query round.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both"></td>
+  <td class="communication"></td>
+  <td class="adversary"><span class="set-var">(m<sup>*</sup>, t<sup>*</sup>)</span> &isin; Outputs: (&#x2200; i) m<sup>*</sup> &ne; m<sub>i</sub> </td>
+</tr>
+</tbody>
+
+<tbody class="done" title="The adversary outputs their attempted forgery.">
+<tr>
+  <td class="meta"></td>
+  <td class="challenger-both"></td>
+  <td class="communication"></td>
+  <td class="adversary send-down">(m<sup>*</sup>, t<sup>*</sup>)<br>&darr;</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Advantage</h2>
+
+<ul>
+<li><code>Advantage(Adversary) = Pr[Verify(k, m<sup>*</sup>, t<sup>*</sup>)</code> accepts the tag as valid<code>]</code></li>
+</ul>
+
+<br><br>
+<h2>Correctness</h2>
+
+<ul>
+<li><code>(&#x2200; m) Pr[k &larr; genKeys(), Verify(k, m, Sign(k, m)) == accept ] == 1</code></li>
+</ul>
+
+</div>
